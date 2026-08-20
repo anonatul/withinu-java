@@ -23,7 +23,7 @@ services:
       - key: CAMPUS_BOUNDARY_WKT
         value: ""
       - key: ALLOW_ANY_LOCATION
-        value: "true" # dev demo: set to false to enforce the TCET boundary
+        value: "false" # enforce the TCET campus boundary
 
   # React app served by nginx, proxies /api to the backend
   - type: web
