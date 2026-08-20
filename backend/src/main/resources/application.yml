@@ -16,10 +16,13 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
   data:
     redis:
       host: ${REDIS_HOST:localhost}
       port: ${REDIS_PORT:6379}
+      url: ${REDIS_URL:}
   jackson:
     default-property-inclusion: non_null
 
@@ -43,7 +46,7 @@ springdoc:
     path: /swagger-ui.html
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 logging:
   level:

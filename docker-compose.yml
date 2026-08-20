@@ -27,8 +27,8 @@ services:
   backend:
     build: ./backend
     environment:
-      DATABASE_URL: jdbc:postgresql://db:5432/withinu
-      DATABASE_USERNAME: withinu
+      DATABASE_URL: ${DATABASE_URL:-jdbc:postgresql://db:5432/withinu}
+      DATABASE_USERNAME: ${DATABASE_USERNAME:-withinu}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD:-withinu}
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -46,6 +46,8 @@ services:
 
   frontend:
     build: ./frontend
+    environment:
+      BACKEND_URL: http://backend:8080
     depends_on:
       - backend
     ports:
