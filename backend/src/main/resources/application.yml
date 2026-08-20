@@ -5,6 +5,9 @@ spring:
     url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/withinu}
     username: ${DATABASE_USERNAME:withinu}
     password: ${DATABASE_PASSWORD:withinu}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX:10}
+      minimum-idle: ${DB_POOL_MIN:2}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -18,6 +21,8 @@ spring:
     locations: classpath:db/migration
     baseline-on-migrate: true
     baseline-version: 0
+    connect-retries: 5
+    retry-backoff: 2000
   data:
     redis:
       host: ${REDIS_HOST:localhost}
