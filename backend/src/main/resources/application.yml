@@ -6,7 +6,7 @@ spring:
     username: ${DATABASE_USERNAME:withinu}
     password: ${DATABASE_PASSWORD:withinu}
     hikari:
-      maximum-pool-size: ${DB_POOL_MAX:10}
+      maximum-pool-size: ${DB_POOL_MAX:2}
       minimum-idle: ${DB_POOL_MIN:2}
   jpa:
     hibernate:
