@@ -9,7 +9,7 @@ services:
     healthCheckPath: /api/v1/health
     envVars:
       - key: DATABASE_URL
-        value: jdbc:postgresql://aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres
+        value: jdbc:postgresql://aws-0-ap-northeast-1.pooler.supabase.com:6543/postgres # transaction pooler (5432 is session mode, max 15 clients)
       - key: DATABASE_USERNAME
         value: postgres.buhaxhcimrjgcudyymcw
       - key: DATABASE_PASSWORD
